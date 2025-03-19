@@ -133,10 +133,9 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias k=kubectl
-alias g8=~/lab/data/7-env/gcp/gcp.k8.sh
-alias gc=~/lab/data/7-env/gcp/gcp.create.sh
-alias ss=~/lab/data/7-env/op/op.ssh.sh
-alias sm=~/lab/data/7-env/op/op.scp.sh
+alias g8=~/lab/data/7-env/scripts/gcp.k8.sh
+alias gc=~/lab/data/7-env/scripts/gcp.create.sh
+alias ss=~/lab/data/7-env/scripts/ssh-connect.sh
 alias kns='kubectl config set-context --current --namespace '
 { eval "$(ssh-agent -s)"; ssh-add -A; } &>/dev/null
 # Set variables in .bashrc file
