@@ -89,10 +89,6 @@ build_prompt() {
 if [ "$color_prompt" = yes ]; then
 
 PS1="\[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
-    #PS1='\[\033[01;32m\]\w\[\033[00m\]\$ '
-    #PS1='\[\033[01;32m\]\w\[\033[00m\]\$ '
-#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-#PS1='\[\033[01;33m\]\u@\h\[\033[01;31m\] \W\$\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -113,9 +109,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
@@ -133,9 +128,8 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias k=kubectl
-alias g8=~/lab/data/7-env/scripts/gcp.k8.sh
-alias gc=~/lab/data/7-env/scripts/gcp.create.sh
-alias ss=~/lab/data/7-env/scripts/ssh-connect.sh
+alias g8=~/scripts/gcp.k8.sh
+alias ss=~/scripts/ssh-connect.sh
 alias kns='kubectl config set-context --current --namespace '
 { eval "$(ssh-agent -s)"; ssh-add -A; } &>/dev/null
 # Set variables in .bashrc file
