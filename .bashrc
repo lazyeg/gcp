@@ -126,11 +126,14 @@ alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 alias k=kubectl
 alias g8=~/scripts/gcp.k8.sh
 alias ss=~/scripts/ssh-connect.sh
 alias kns='kubectl config set-context --current --namespace '
+## Setting nats command
+alias natsprod='nats --nkey=~/.nkey/racer-user.nkey --server=nats://prod-nats.letron.site:4222'
+alias natsuat='nats --nkey=~/.nkey/racer-user.nkey --server=nats://uat-nats.letron.site:4222'
+
 { eval "$(ssh-agent -s)"; ssh-add -A; } &>/dev/null
 # Set variables in .bashrc file
 
