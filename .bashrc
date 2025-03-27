@@ -140,7 +140,7 @@ alias natsuat='nats --nkey=~/.nkey/racer-user.nkey --server=nats://uat-nats.letr
 # don't forget to change your path correctly!
 
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/go/
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 export PATH="/usr/local/opt/helm@2/bin:$PATH"
